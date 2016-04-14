@@ -21,6 +21,10 @@ Responsive Show and Hide:
 <div class="show-sm hide-md">show-sm hide-md: show from sm and hide from md and up</div>
 ```
 
+## Build
+
+    $
+
 ## Dependencies
 
 - https://github.com/mastastealth/sass-flex-mixin
