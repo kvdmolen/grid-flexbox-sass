@@ -1,6 +1,6 @@
 # Grid Flexbox SASS
 
-Bootstrap 4 inspired css3 flexbox implementation of responsive grid.
+Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.
 
 ```html
 <div class="row">
@@ -21,9 +21,17 @@ Responsive Show and Hide:
 <div class="show-sm hide-md">show-sm hide-md: show from sm and hide from md and up</div>
 ```
 
+## Features
+
+- Integrated ellipsis
+- Stretch columns to full width
+- Full height
+- Vertical align center (`.col-align-middle`)
+- Simple Responsive show & hide system
+
 ## Build
 
-    $
+    $ sass src/config.scss:dist/gridflexbox.css
 
 ## Dependencies
 
