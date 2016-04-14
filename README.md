@@ -1,6 +1,6 @@
-# Grid Flexbox
+# Grid Flexbox SASS
 
-Bootstrap-inspired css3 flexbox implementation of responsive grid.
+Bootstrap 4 inspired css3 flexbox implementation of responsive grid.
 
 ```html
 <div class="row">
