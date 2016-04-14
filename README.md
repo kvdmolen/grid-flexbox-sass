@@ -5,7 +5,7 @@ Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.
 ```html
 <div class="row">
     <div class="col-auto">Auto fit column</div>
-    <div class="col-10px">Always 20px width</div>
+    <div class="col-20px">Always 20px width</div>
     <div class="col-sm-4 col-md-6">Bigger in large screen</div>
     <div class="col-sm-4 col-md-2">Smaller in large screen</div>
 </div>
