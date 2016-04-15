@@ -39,4 +39,5 @@ Responsive Show and Hide:
 
 ## Inspiration
 
+- https://github.com/kristoferjoseph/flexboxgrid
 - Bootstrap 4
