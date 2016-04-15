@@ -11,6 +11,8 @@ Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.
 </div>
 ```
 
+<link href="https://raw.githubusercontent.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.css" rel="stylesheet">
+
 <div class="row">
     <div class="col-auto" style='border:1px solid #EEE'>Auto fit column</div>
     <div class="col-20px">Always 20px width</div>
