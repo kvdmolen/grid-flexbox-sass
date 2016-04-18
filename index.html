@@ -1,53 +1,189 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <title>Grid Flexbox SASS</title>
+
+    <link href="dist/gridflexbox.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+    <style type="text/css">
+        body {
+            font-family: "Open Sans";
+        }
+        .wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+        .line-wrapper {
+            /*padding: 0 0 20px 0;*/
+            /*padding: 10px 0;*/
+        }
+
+        .line-wrapper div {
+            background-color: #ABE;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .row-wrapper {
+            /*padding: 0 0 20px 0;*/
+            /*margin: 0 10px;*/
+        }
+        .row-wrapper [class*="col-"] span {
+            display: block;
+            background-color: #EBA;
+            padding: 10px;
+            margin: 5px 0;
+        }
+        .code {
+            font-family: "Courier New";
+            font-size: 13px;
+            font-weight: bold;
+        }
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+    </style>
+
+</head>
 <body>
 
-<article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-grid-flexbox-sass" class="anchor" href="#grid-flexbox-sass" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Grid Flexbox SASS</h1>
+<div class="wrapper">
 
-<p>Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.</p>
-
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>row<span class="pl-pds">"</span></span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-auto<span class="pl-pds">"</span></span>&gt;Auto fit column&lt;/<span class="pl-ent">div</span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-20px<span class="pl-pds">"</span></span>&gt;Always 20px width&lt;/<span class="pl-ent">div</span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-sm-4 col-md-6<span class="pl-pds">"</span></span>&gt;Bigger in large screen&lt;/<span class="pl-ent">div</span>&gt;
-    &lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>col-sm-4 col-md-2<span class="pl-pds">"</span></span>&gt;Smaller in large screen&lt;/<span class="pl-ent">div</span>&gt;
-&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
-
-<p>Responsive Show and Hide:</p>
-
-<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>hide-sm<span class="pl-pds">"</span></span>&gt;hide-sm: hide from sm and up&lt;/<span class="pl-ent">div</span>&gt;
-&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>show-sm<span class="pl-pds">"</span></span>&gt;hide-sm: show from sm and up&lt;/<span class="pl-ent">div</span>&gt;
-&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>hide-md<span class="pl-pds">"</span></span>&gt;hide-sm: hide from md and up&lt;/<span class="pl-ent">div</span>&gt;
-&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>show-md<span class="pl-pds">"</span></span>&gt;hide-sm: show from md and up&lt;/<span class="pl-ent">div</span>&gt;
-&lt;<span class="pl-ent">div</span> <span class="pl-e">class</span>=<span class="pl-s"><span class="pl-pds">"</span>show-sm hide-md<span class="pl-pds">"</span></span>&gt;show-sm hide-md: show from sm and hide from md and up&lt;/<span class="pl-ent">div</span>&gt;</pre></div>
-
-<h2><a id="user-content-features" class="anchor" href="#features" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Features</h2>
+<h1>Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.</h1>
+<h2>Features:</h2>
 
 <ul>
-<li>Integrated ellipsis</li>
-<li>Stretch columns to full width</li>
-<li>Full height</li>
-<li>Vertical align center (<code>.col-align-middle</code>)</li>
-<li>Simple Responsive show &amp; hide system</li>
+    <li>Integrated ellipsis</li>
+    <li>Stretch columns to full width</li>
+    <li>Full height</li>
+    <li>Vertical align center (<xcode>.col-align-middle</xcode>)</li>
+    <li>Simple Responsive show &amp; hide system</li>
 </ul>
 
-<h2><a id="user-content-build" class="anchor" href="#build" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Build</h2>
+<h2>Documentation</h2>
 
-<pre><code>$ sass src/config.scss:dist/gridflexbox.css
+<h3>Defaults</h3>
+
+<pre><code class="javascript">
+    $columns: 12;
+    $gutter-width: 20px;
 </code></pre>
 
-<h2><a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Dependencies</h2>
+<h3>Basic Grid</h3>
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-md-3 col-xs-6"><span class="code">.col-md-3 .col-xs-6</span></div>
+        <div class="col-md-3 col-xs-6"><span class="code">.col-md-3 .col-xs-6</span></div>
+        <div class="col-md-3 col-xs-6"><span class="code">.col-md-3 .col-xs-6</span></div>
+        <div class="col-md-3 col-xs-6"><span class="code">.col-md-3 .col-xs-6</span></div>
+    </div>
+</div>
 
+<pre><code class="html">
+<div class="row">
+    <div class="col-xs-6 col-md-3"></div>
+    <div class="col-xs-6 col-md-3"></div>
+    <div class="col-xs-6 col-md-3"></div>
+    <div class="col-xs-6 col-md-3"></div>
+</div>
+</code>
+</pre>
+
+
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-xs-3 col"><span class="code">.col-xs-3</span></div>
+        <div class="col-xs-4"><span class="code">.col-xs-4</span></div>
+        <div class="col-xs-5"><span class="code">.col-xs-5</span></div>
+    </div>
+</div>
+
+<pre><code class="html">
+<div class="row">
+    <div class="col-md-3">col-md-3</div>
+    <div class="col-md-3">col-md-3</div>
+    <div class="col-md-3">col-md-3</div>
+    <div class="col-md-3">col-md-3</div>
+</div>
+</code>
+</pre>
+
+
+<h3>Fixed Width</h3>
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-sm-3"><span class="code">.col-sm-3</span></div>
+        <div class="col-sm-3"><span class="code">.col-sm-3</span></div>
+        <div class="col-100px"><span class="code">.col-100px</span></div>
+        <div class="col-auto"><span class="code">.col-auto</span></div>
+    </div>
+</div>
+
+<pre><code class="html">
+<div class="row">
+    <div class="col-sm-3">.col-sm-3</div>
+    <div class="col-sm-3">.col-sm-3</div>
+    <div class="col-100px">.col-100px</div>
+    <div class="col-auto">.col-auto</div>
+</div>
+</code></pre>
+
+
+<h3>Responsive Show and Hide</h3>
+<div class="line-wrapper">
+    <div class="show-xs"><span class="code">.show-xs</span> Your screen is currently larger than xs</div>
+    <div class="show-md"><span class="code">.show-md</span> Your screen is currently larger than md</div>
+    <div class="hide-lg"><span class="code">.show-xs</span> Your screen is currently smaller than lg</div>
+    <div class="hide-sm"><span class="code">.show-sm</span> Your screen is currently smaller than sm</div>
+    <div class="show-xs hide-md"><span class="code">.show-xs .hide-md</span> Your screen is currently between xs and md</div>
+</div>
+
+<pre><code class="html">
+<div class="show-xs">Your screen is currently larger than xs</div>
+<div class="show-md">Your screen is currently larger than md</div>
+<div class="hide-lg">our screen is currently smaller than lg</div>
+<div class="hide-sm">Your screen is currently smaller than sm</div>
+<div class="show-xs hide-md">Your screen is currently between xs and md</span></div>
+</code></pre>
+
+
+<h2>Dependencies</h2>
 <ul>
-<li><a href="https://github.com/mastastealth/sass-flex-mixin">https://github.com/mastastealth/sass-flex-mixin</a></li>
+    <li><a href="https://github.com/mastastealth/sass-flex-mixin">https://github.com/mastastealth/sass-flex-mixin</a></li>
 </ul>
 
-<h2><a id="user-content-inspiration" class="anchor" href="#inspiration" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z"></path></svg></a>Inspiration</h2>
-
+<h2>Inspiration</h2>
 <ul>
-<li>Bootstrap 4</li>
+    <li><a href="https://github.com/kristoferjoseph/flexboxgrid">https://github.com/kristoferjoseph/flexboxgrid</a></li>
+    <li>Bootstrap 4</li>
 </ul>
-</article>
+</div>
+
+    <script>
+        function escapeHtml(unsafe) {
+            return unsafe
+            // .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            // .replace(/"/g, "&quot;")
+            // .replace(/'/g, "&#039;");
+        }
+        var objs = document.getElementsByTagName("code")
+        for(var i = 0; i < objs.length; i ++){
+            objs[i].innerHTML = escapeHtml(objs[i].innerHTML)
+        }
+        hljs.initHighlightingOnLoad();
+    </script>
 
 </body>
 </html>
