@@ -7,9 +7,11 @@
 
     <title>Grid Flexbox SASS</title>
 
+    <link href="prism.css" rel="stylesheet" />
     <link href="https://cdn.rawgit.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.min.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css"> -->
+    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script> -->
+    <script src="prism.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
     <style type="text/css">
@@ -22,40 +24,38 @@
             margin: 0 auto;
             padding: 10px;
         }
-        .line-wrapper {
-            /*padding: 0 0 20px 0;*/
-            /*padding: 10px 0;*/
-        }
-
         .line-wrapper div {
-            background-color: #ABE;
-            padding: 10px;
+            background-color: #2980b9;
             margin: 5px 0;
+            color: #FFF;
         }
-        .row-wrapper {
-            /*padding: 0 0 20px 0;*/
-            /*margin: 0 10px;*/
+        .row-wrapper [class*="col-"] {
+            background-clip: content-box;
+            color: #FFF;
+            /*font-size: 14px;*/
+            background-color: #2980b9;
         }
-        .row-wrapper [class*="col-"] span {
-            display: block;
-            background-color: #EBA;
-            padding: 10px;
-            margin: 5px 0;
-        }
-        .row-wrapper-2 [class*="col-"] {
-            background-color: #EBA;
-/*            padding: 10px;
-            margin: 5px 0;
-*/        }
         .code {
-            font-family: "Courier New";
-            font-size: 13px;
-            font-weight: bold;
+            padding: 10px;
+            display: inline-block;
         }
         * {
             -webkit-box-sizing: border-box;
             -moz-box-sizing: border-box;
             box-sizing: border-box;
+        }
+        .col-overflow {
+            white-space: initial;
+            overflow: visible;
+        }
+        .code2 {
+            font-family: "Courier New";
+            font-size: 0.9em;
+            background-color: #CCC;
+            padding: 3px;
+            display: inline-block;
+            font-weight: bold;
+            border-radius: 3px;
         }
     </style>
 
@@ -77,23 +77,27 @@
 </ul>
 
 <h2>CDN</h2>
-<pre><code class="html">
-<link href="https://cdn.rawgit.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.min.css" rel="stylesheet" type="text/css">
-</code></pre>
+<pre><code class="language-html"><link href="https://cdn.rawgit.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.min.css" rel="stylesheet" type="text/css"></code></pre>
 
 <h2>Documentation</h2>
 
 <h3>Defaults</h3>
 
-<pre><code class="javascript">
-    $columns: 12;
-    $gutter-width: 20px;
-    $xs: 30em;
-    $sm: 48em;
-    $md: 64em;
-    $lg: 75em;
-
+<pre><code class="language-js">$columns: 12;
+$gutter-width: 20px;
+$xs: 30em;
+$sm: 48em;
+$md: 64em;
+$lg: 75em;
 </code></pre>
+
+<div class="row">
+    <div class="col-md-3 col-xs-6"><span class="a">.col-md-3 .col-xs-6</span></div>
+    <div class="col-md-3 col-xs-6"><span class="a">.col-md-3 .col-xs-6</span></div>
+    <div class="col-md-3 col-xs-6"><span class="a">.col-md-3 .col-xs-6</span></div>
+    <div class="col-md-3 col-xs-6"><span class="a">.col-md-3 .col-xs-6</span></div>
+</div>
+
 
 <h3>Basic Grid</h3>
 <div class="row-wrapper">
@@ -105,14 +109,12 @@
     </div>
 </div>
 
-<pre><code class="html">
-<div class="row">
+<pre><code class="language-html"><div class="row">
     <div class="col-xs-6 col-md-3"></div>
     <div class="col-xs-6 col-md-3"></div>
     <div class="col-xs-6 col-md-3"></div>
     <div class="col-xs-6 col-md-3"></div>
-</div>
-</code></pre>
+</div></code></pre>
 
 
 <div class="row-wrapper">
@@ -123,14 +125,11 @@
     </div>
 </div>
 
-<pre><code class="html">
-<div class="row">
+<pre><code class="language-html"><div class="row">
     <div class="col-xs-3">.col-xs-3</div>
     <div class="col-xs-4">.col-xs-4</div>
     <div class="col-xs-5">.col-xs-5</div>
-</div>
-</code>
-</pre>
+</div></code></pre>
 
 
 <h3>Fixed Width</h3>
@@ -143,46 +142,53 @@
     </div>
 </div>
 
-<pre><code class="html">
-<div class="row">
+<pre><code class="language-html"><div class="row">
     <div class="col-sm-3">.col-sm-3</div>
     <div class="col-sm-3">.col-sm-3</div>
     <div class="col-100px">.col-100px</div>
     <div class="col-auto">.col-auto</div>
-</div>
-</code></pre>
+</div></code></pre>
 
 
-<h3>AutomaticOverflow</h3>
-<div class="row-wrapper row-wrapper-2">
+<h3>Overflow by Default</h3>
+<div class="row-wrapper">
     <div class="row">
         <div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</div>
         <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
     </div>
 </div>
 
-<pre><code class="html">
-<div class="row">
+<pre><code class="language-html"><div class="row">
     <div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</div>
     <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+</div></code></pre>
+
+<p>Prevent overflow: <span class="code2">.col-overflow</span></p>
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-sm-6 col-overflow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+        <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+    </div>
 </div>
-</code></pre>
+
+<pre><code class="language-html"><div class="row">
+    <div class="col-sm-6 col-overflow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+</div></code></pre>
 
 
 <h3>Align Middle</h3>
 <div class="row-wrapper">
-    <div class="row" style="height:100px;border: 1px solid #CCC;">
-        <div class="col-sm-6 col-align-middle"><span class="code">.col-align-middle</span></div>
+    <div class="row" style="height:100px;">
+        <div class="col-sm-6 col-align-middle"><span class="code">.col-sm-6 .col-align-middle</span></div>
         <div class="col-sm-6"><span class="code">.col-sm-6</span></div>
     </div>
 </div>
 
-<pre><code class="html">
-<div class="row">
+<pre><code class="language-html"><div class="row">
     <div class="col-sm-6 col-align-middle">.col-align-middle</div>
     <div class="col-sm-6">&nbsp;</div>
-</div>
-</code></pre>
+</div></code></pre>
 
 
 <h3>Responsive: Show and Hide</h3>
@@ -194,13 +200,11 @@
     <div class="show-xs hide-md"><span class="code">.show-xs .hide-md</span> Your screen is currently between xs and md</div>
 </div>
 
-<pre><code class="html">
-<div class="show-xs">Your screen is currently larger than xs</div>
+<pre><code class="language-html"><div class="show-xs">Your screen is currently larger than xs</div>
 <div class="show-md">Your screen is currently larger than md</div>
 <div class="hide-lg">our screen is currently smaller than lg</div>
 <div class="hide-sm">Your screen is currently smaller than sm</div>
-<div class="show-xs hide-md">Your screen is currently between xs and md</span></div>
-</code></pre>
+<div class="show-xs hide-md">Your screen is currently between xs and md</span></div></code></pre>
 
 
 <h2>Dependencies</h2>
@@ -225,7 +229,7 @@
     for(var i = 0; i < objs.length; i ++){
         objs[i].innerHTML = escapeHtml(objs[i].innerHTML)
     }
-    hljs.initHighlightingOnLoad();
+    // hljs.initHighlightingOnLoad();
 </script>
 
 <script>
