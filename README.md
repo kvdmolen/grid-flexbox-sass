@@ -12,9 +12,11 @@ Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.
 - Vertical align center
 - Simple Responsive show & hide system
 
-## Direct Link
+## CDN
 
-- https://raw.githubusercontent.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.min.css
+```html
+<link href="https://cdn.rawgit.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.min.css" rel="stylesheet" type="text/css">
+```
 
 ## Build
 
