@@ -42,6 +42,11 @@
             padding: 10px;
             margin: 5px 0;
         }
+        .row-wrapper-2 [class*="col-"] {
+            background-color: #EBA;
+/*            padding: 10px;
+            margin: 5px 0;
+*/        }
         .code {
             font-family: "Courier New";
             font-size: 13px;
@@ -148,7 +153,39 @@
 </code></pre>
 
 
-<h3>Responsive Show and Hide</h3>
+<h3>AutomaticOverflow</h3>
+<div class="row-wrapper row-wrapper-2">
+    <div class="row">
+        <div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</div>
+        <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+    </div>
+</div>
+
+<pre><code class="html">
+<div class="row">
+    <div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</div>
+    <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+</div>
+</code></pre>
+
+
+<h3>Align Middle</h3>
+<div class="row-wrapper">
+    <div class="row" style="height:100px;border: 1px solid #CCC;">
+        <div class="col-sm-6 col-align-middle"><span class="code">.col-align-middle</span></div>
+        <div class="col-sm-6"><span class="code">.col-sm-6</span></div>
+    </div>
+</div>
+
+<pre><code class="html">
+<div class="row">
+    <div class="col-sm-6 col-align-middle">.col-align-middle</div>
+    <div class="col-sm-6">&nbsp;</div>
+</div>
+</code></pre>
+
+
+<h3>Responsive: Show and Hide</h3>
 <div class="line-wrapper">
     <div class="show-xs"><span class="code">.show-xs</span> Your screen is currently larger than xs</div>
     <div class="show-md"><span class="code">.show-md</span> Your screen is currently larger than md</div>
