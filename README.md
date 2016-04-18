@@ -22,7 +22,7 @@ Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.
 
     $ sass src/config.scss:dist/gridflexbox.css
 
-## Dependencies
+## Build Dependencies
 
 - https://github.com/mastastealth/sass-flex-mixin
 
