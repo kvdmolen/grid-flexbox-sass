@@ -2,14 +2,14 @@
 
 Bootstrap 4 inspired CSS3 Flexbox implementation of Responsive Grid.
 
-[Documentation and Demo](https://github.io/kvdmolen/grid-flexbox-sass)
+[Documentation and Demo](http://kvdmolen.github.io/grid-flexbox-sass/)
 
 ## Features
 
 - Integrated ellipsis
 - Stretch columns to full width
 - Full height
-- Vertical align center (`.col-align-middle`)
+- Vertical align center
 - Simple Responsive show & hide system
 
 ## Direct Link
