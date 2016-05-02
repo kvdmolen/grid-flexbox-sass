@@ -16,7 +16,17 @@ $grid-fixed-width: (
     70px: 70px,
     80px: 80px,
     90px: 90px,
-    100px: 100px
+    100px: 100px,
+    110px: 110px,
+    120px: 120px,
+    130px: 130px,
+    140px: 140px,
+    150px: 150px,
+    160px: 160px,
+    170px: 170px,
+    180px: 180px,
+    190px: 190px,
+    200px: 200px
 );
 
 @mixin make-grid-shared($padding: $grid-padding) {
