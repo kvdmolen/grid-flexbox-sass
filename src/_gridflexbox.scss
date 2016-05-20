@@ -1,5 +1,6 @@
 $grid-padding: 10px;
 $grid-column-count: 12;
+$grid-flex-count: 10;
 $grid-breakpoints: (
     xs: 30em,
     sm: 48em,
@@ -91,7 +92,7 @@ $grid-fixed-width: (
     }
 }
 
-@mixin make-grid-fixed($fixed: $grid-fixed-width, $padding: $grid-padding) {
+@mixin make-grid-fixed($fixed, $padding) {
     @each $fixkey in map-keys($fixed) {
         $fixval: map-get($fixed, $fixkey);
         .col-#{$fixkey} {
@@ -101,7 +102,26 @@ $grid-fixed-width: (
     }
 }
 
-@mixin make-grid-columns($column-count: $grid-column-count, $breakpoints: $grid-breakpoints) {
+@mixin make-flex-columns($flex-count) {
+    // Non-responsize flexible columns (takes x space): .col-1, .col-2, .col-offset-1, ...
+    @for $i from 1 through $flex-count {
+        .col-#{$i} {
+            @include flex($i 0 0);
+        }
+    }
+}
+
+@mixin make-grid-columns($column-count, $breakpoints) {
+    // Non-responsize columns: .col-all-1, .col-all-2, .col-all-offset-1, ...
+    @for $i from 1 through $column-count {
+        .col-all-#{$i} {
+            @include flex(0 0 percentage($i / $column-count));
+        }
+        .col-all-offset-#{$i} {
+            margin-left: percentage($i / $column-count);
+        }
+    }
+    // Responsize columns: .col-xs-1, .col-md-2, .col-md-offset-1, ...
     @each $breakpoint in map-keys($breakpoints) {
         $bp: map-get($breakpoints, $breakpoint);
         @media only screen and (min-width: $bp) {
@@ -117,7 +137,7 @@ $grid-fixed-width: (
     }
 }
 
-@mixin make-show-hide($breakpoints: $grid-breakpoints) {
+@mixin make-show-hide($breakpoints) {
     @each $breakpoint in map-keys($breakpoints) {
         $bp: map-get($breakpoints, $breakpoint);
         @media only screen and (min-width: $bp) {
@@ -133,9 +153,10 @@ $grid-fixed-width: (
     }
 }
 
-@mixin make-gridflexbox($grid-padding: $grid-padding, $grid-column-count: $grid-column-count, $grid-breakpoints: $grid-breakpoints, $grid-fixed-width: $grid-fixed-width){
-    @include make-grid-shared($grid-padding);
-    @include make-grid-fixed($grid-fixed-width, $grid-padding);
-    @include make-grid-columns($grid-column-count, $grid-breakpoints);
-    @include make-show-hide($grid-breakpoints);
+@mixin make-gridflexbox($padding: $grid-padding, $column-count: $grid-column-count, $flex-count: $grid-flex-count, $breakpoints: $grid-breakpoints, $fixed-width: $grid-fixed-width){
+    @include make-grid-shared($padding);
+    @include make-grid-fixed($fixed-width, $padding);
+    @include make-grid-columns($column-count, $breakpoints);
+    @include make-flex-columns($flex-count);
+    @include make-show-hide($breakpoints);
 }

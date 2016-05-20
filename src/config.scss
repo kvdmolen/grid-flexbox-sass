@@ -3,6 +3,7 @@
 
 $grid-padding: 10px;
 $grid-column-count: 12;
+$grid-flex-count: 10;
 
 $grid-breakpoints: (
     xs: 30em,
@@ -34,4 +35,4 @@ $grid-fixed-width: (
     200px: 200px
 );
 
-@include make-gridflexbox($grid-padding, $grid-column-count, $grid-breakpoints, $grid-fixed-width);
+@include make-gridflexbox($grid-padding, $grid-column-count, $grid-flex-count, $grid-breakpoints, $grid-fixed-width);
