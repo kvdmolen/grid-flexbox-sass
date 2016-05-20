@@ -9,8 +9,6 @@
 
     <link href="prism.css" rel="stylesheet" />
     <link href="https://cdn.rawgit.com/kvdmolen/grid-flexbox-sass/master/dist/gridflexbox.min.css" rel="stylesheet" type="text/css">
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css"> -->
-    <!-- <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script> -->
     <script src="prism.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -91,7 +89,7 @@ $md: 64em;
 $lg: 75em;
 </code></pre>
 
-<h3>Basic Grid</h3>
+<h3>Grid-based columns (Bootstrap-style)</h3>
 <div class="row-wrapper">
     <div class="row">
         <div class="col-md-3 col-xs-6"><span class="code">.col-md-3 .col-xs-6</span></div>
@@ -123,24 +121,59 @@ $lg: 75em;
     <div class="col-xs-5">.col-xs-5</div>
 </div></code></pre>
 
-
-<h3>Fixed Width</h3>
 <div class="row-wrapper">
     <div class="row">
-        <div class="col-sm-3"><span class="code">.col-sm-3</span></div>
-        <div class="col-sm-3"><span class="code">.col-sm-3</span></div>
-        <div class="col-100px"><span class="code">.col-100px</span></div>
+        <div class="col-xs-4 col-xs-offset-4"><span class="code">.col-xs-3 .col-xs-offset-4</span></div>
+    </div>
+</div>
+
+<pre><code class="language-html"><div class="row">
+    <div class="col-xs-4 col-xs-offset-4">.col-xs-4 .col-xs-offset-4</div>
+</div></code></pre>
+
+
+<h3>Automatic Column Width</h3>
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-xs-1"><span class="code">.col-xs-1</span></div>
         <div class="col-auto"><span class="code">.col-auto</span></div>
     </div>
 </div>
 
 <pre><code class="language-html"><div class="row">
-    <div class="col-sm-3">.col-sm-3</div>
-    <div class="col-sm-3">.col-sm-3</div>
-    <div class="col-100px">.col-100px</div>
+    <div class="col-auto">.col-auto</div>
     <div class="col-auto">.col-auto</div>
 </div></code></pre>
 
+<h3>Fixed Width Columns</h3>
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-10px"><span class="code">.col-10px</span></div>
+        <div class="col-100px"><span class="code">.col-100px</span></div>
+        <div class="col-200px"><span class="code">.col-200px</span></div>
+        <div class="col-auto"><span class="code">.col-auto</span></div>
+    </div>
+</div>
+
+<pre><code class="language-html"><div class="row">
+    <div class="col-10px">.col-10px</div>
+    <div class="col-100px">.col-100px</div>
+    <div class="col-200px">.col-200px</div>
+    <div class="col-auto">.col-auto</div>
+</div></code></pre>
+
+<h3>Ratio-Width Columns</h3>
+<div class="row-wrapper">
+    <div class="row">
+        <div class="col-3"><span class="code">.col-3</span></div>
+        <div class="col-1"><span class="code">.col-1</span></div>
+    </div>
+</div>
+
+<pre><code class="language-html"><div class="row">
+    <div class="col-3">.col-3</div>
+    <div class="col-1">.col-1</div>
+</div></code></pre>
 
 <h3>Overflow by Default</h3>
 <div class="row-wrapper">
@@ -168,7 +201,6 @@ $lg: 75em;
     <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
 </div></code></pre>
 
-
 <h3>Align Middle</h3>
 <div class="row-wrapper">
     <div class="row" style="height:100px;">
@@ -181,7 +213,6 @@ $lg: 75em;
     <div class="col-sm-6 col-align-middle">.col-align-middle</div>
     <div class="col-sm-6">&nbsp;</div>
 </div></code></pre>
-
 
 <h3>Responsive: Show and Hide</h3>
 <div class="line-wrapper">
