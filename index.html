@@ -67,11 +67,13 @@
 <h2>Features:</h2>
 
 <ul>
-    <li>Integrated ellipsis</li>
+    <li>Grid based comlumn sizes</li>
     <li>Stretch columns to full width</li>
-    <li>Full height</li>
-    <li>Vertical align center (<xcode>.col-align-middle</xcode>)</li>
-    <li>Simple Responsive show &amp; hide system</li>
+    <li>Column width ratio, combined with fixed width</li>
+    <li>Full height columns</li>
+    <li>Vertical align middle</li>
+    <li>Simple Responsive show & hide system</li>
+    <li>Integrated ellipsis</li>
 </ul>
 
 <h2>CDN</h2>
@@ -135,13 +137,13 @@ $lg: 75em;
 <h3>Automatic Column Width</h3>
 <div class="row-wrapper">
     <div class="row">
-        <div class="col-xs-1"><span class="code">.col-xs-1</span></div>
+        <div class="col-xs-2"><span class="code">.col-xs-2</span></div>
         <div class="col-auto"><span class="code">.col-auto</span></div>
     </div>
 </div>
 
 <pre><code class="language-html"><div class="row">
-    <div class="col-auto">.col-auto</div>
+    <div class="col-xs-2">.col-xs-2</div>
     <div class="col-auto">.col-auto</div>
 </div></code></pre>
 
@@ -175,11 +177,11 @@ $lg: 75em;
     <div class="col-1">.col-1</div>
 </div></code></pre>
 
-<h3>Overflow by Default</h3>
+<h3>Ellipsis Overflow by Default</h3>
 <div class="row-wrapper">
     <div class="row">
-        <div class="col-sm-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</div>
-        <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
+        <div class="col-sm-6"><span class="code">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</span></div>
+        <div class="col-sm-6"><span class="code">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</span></div>
     </div>
 </div>
 
@@ -188,16 +190,16 @@ $lg: 75em;
     <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</div>
 </div></code></pre>
 
-<p>Prevent overflow: <span class="code2">.col-overflow</span></p>
+<p>Prevent overflow: <span class="code2">.col-prevent-overflow</span></p>
 <div class="row-wrapper">
     <div class="row">
-        <div class="col-sm-6 col-overflow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-        <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
+        <div class="col-sm-6 col-prevent-overflow"><span class="code">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</span></div>
+        <div class="col-sm-6"><span class="code">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</span></div>
     </div>
 </div>
 
 <pre><code class="language-html"><div class="row">
-    <div class="col-sm-6 col-overflow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+    <div class="col-sm-6 col-prevent-overflow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
     <div class="col-sm-6">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</div>
 </div></code></pre>
 
@@ -233,10 +235,12 @@ $lg: 75em;
 <h2>Dependencies</h2>
 <ul>
     <li><a href="https://github.com/mastastealth/sass-flex-mixin">https://github.com/mastastealth/sass-flex-mixin</a></li>
+    <li>Node-sass</li>
 </ul>
 
 <h2>Inspiration</h2>
 <ul>
+    <li>CSS3 Flexbox</li>
     <li><a href="https://github.com/kristoferjoseph/flexboxgrid">https://github.com/kristoferjoseph/flexboxgrid</a></li>
     <li><a href="http://v4-alpha.getbootstrap.com/">Bootstrap 4</a></li>
 </ul>
