@@ -39,7 +39,7 @@ $grid-fixed-width: (
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        @include flex(0 0 100%);
+        @include flex(0 0 auto);
         padding-right: $padding;
         padding-left: $padding;
         min-height: 1px;
@@ -65,7 +65,7 @@ $grid-fixed-width: (
         }
     }
 
-    .col-prevent-overflow {
+    .col-overflow {
         overflow: visible;
     }
 
@@ -106,7 +106,7 @@ $grid-fixed-width: (
     // Non-responsize flexible columns (takes x space): .col-1, .col-2, .col-offset-1, ...
     @for $i from 1 through $flex-count {
         .col-#{$i} {
-            @include flex($i 0 0);
+            @include flex($i);
         }
     }
 }
@@ -115,7 +115,9 @@ $grid-fixed-width: (
     // Non-responsize columns: .col-all-1, .col-all-2, .col-all-offset-1, ...
     @for $i from 1 through $column-count {
         .col-all-#{$i} {
-            @include flex(0 0 percentage($i / $column-count));
+            @include flex-basis(percentage($i / $column-count));
+            max-width: percentage($i / $column-count);
+            // @include flex(0 0 percentage($i / $column-count));
         }
         .col-all-offset-#{$i} {
             margin-left: percentage($i / $column-count);
@@ -127,7 +129,9 @@ $grid-fixed-width: (
         @media only screen and (min-width: $bp) {
             @for $i from 1 through $column-count {
                 .col-#{$breakpoint}-#{$i} {
-                    @include flex(0 0 percentage($i / $column-count));
+                    @include flex-basis(percentage($i / $column-count));
+                    max-width: percentage($i / $column-count);
+                    // @include flex(0 0 percentage($i / $column-count));
                 }
                 .col-#{$breakpoint}-offset-#{$i} {
                     margin-left: percentage($i / $column-count);
