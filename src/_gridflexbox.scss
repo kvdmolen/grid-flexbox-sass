@@ -70,7 +70,7 @@ $grid-fixed-width: (
     }
 
     .col-auto {
-      @include flex(1 0 0);
+      @include flex(1);
     }
 
     .col-right {
